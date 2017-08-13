@@ -201,15 +201,17 @@ public class FactionsChatListener implements Listener {
                 ret = fpfrom.getRelationTo(fpto).getColor().toString();
             }
         } else if (tag.startsWith("roleprefix")) {
-            ret = fpfrom.getRole().getPrefix();
+            if (fpfrom.hasFaction()) {
+                ret = fpfrom.getRole().getPrefix();
+            }
         } else if (tag.equals("title")) {
             ret = fpfrom.getTitle();
         } else if (tag.equals("tag")) {
             if (fpfrom.hasFaction()) {
-                ret = fpfrom.getFaction().getTag();
+                ret = fpfrom.getFaction().getTag()+" ";
             }
         } else if (tag.startsWith("tagforce")) {
-            ret = fpfrom.getFaction().getTag();
+            ret = fpfrom.getFaction().getTag()+" ";
         }
 
         if (ret == null) {
