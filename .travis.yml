@@ -1,2 +1,4 @@
 language: java
-script: mvn -U clean install
+script:
+  - mvn dependency:purge-local-repository
+  - mvn -U clean install
