@@ -1,49 +1,56 @@
 package com.massivecraft.factions.event;
 
-import com.massivecraft.factions.Faction;
-import com.massivecraft.factions.struct.Rel;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class FactionRelationEvent extends Event {
+import com.massivecraft.factions.struct.Rel;
+import com.massivecraft.factions.Faction;
 
-    private static final HandlerList handlers = new HandlerList();
 
-    private Faction fsender;
-    private Faction ftarget;
-    private Rel foldrel;
-    private Rel frel;
+public class FactionRelationEvent extends Event
+{
+	private static final HandlerList handlers = new HandlerList();
 
-    public FactionRelationEvent(Faction sender, Faction target, Rel oldrel, Rel rel) {
-        fsender = sender;
-        ftarget = target;
-        foldrel = oldrel;
-        frel = rel;
-    }
+	private Faction fsender;
+	private Faction ftarget;
+	private Rel foldrel;
+	private Rel frel;
 
-    @Override
-    public HandlerList getHandlers() {
-        return handlers;
-    }
+	public FactionRelationEvent(Faction sender, Faction target, Rel oldrel, Rel rel)
+	{
+		fsender = sender;
+		ftarget = target;
+		foldrel = oldrel;
+		frel = rel;
+	}
 
-    public static HandlerList getHandlerList() {
-        return handlers;
-    }
+	public HandlerList getHandlers() 
+	{
+		return handlers;
+	}
 
-    public Rel getOldRelation() {
-        return foldrel;
-    }
+	public static HandlerList getHandlerList() 
+	{
+		return handlers;
+	}
 
-    public Rel getRelation() {
-        return frel;
-    }
+	public Rel getOldRelation() 
+	{
+		return foldrel;
+	}
 
-    public Faction getFaction() {
-        return fsender;
-    }
+	public Rel getRelation() 
+	{
+		return frel;
+	}
 
-    public Faction getTargetFaction() {
-        return ftarget;
-    }
+	public Faction getFaction()
+	{
+		return fsender;
+	}
 
+	public Faction getTargetFaction()
+	{
+		return ftarget;
+	}
 }

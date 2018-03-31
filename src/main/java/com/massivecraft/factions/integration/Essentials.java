@@ -4,6 +4,7 @@ import com.earth2me.essentials.IEssentials;
 import com.earth2me.essentials.Teleport;
 import com.earth2me.essentials.Trade;
 import com.massivecraft.factions.Conf;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -23,12 +24,12 @@ public class Essentials {
 
     // return false if feature is disabled or Essentials isn't available
     @SuppressWarnings("deprecation")
-    public static boolean handleTeleport(Player player, Location loc) {
+	public static boolean handleTeleport(Player player, Location loc) {
         if (!Conf.homesTeleportCommandEssentialsIntegration || essentials == null) {
             return false;
         }
 
-        Teleport teleport = essentials.getUser(player).getTeleport();
+        Teleport teleport = (Teleport) essentials.getUser(player).getTeleport();
         Trade trade = new Trade(Conf.econCostHome, essentials);
         try {
             teleport.teleport(loc, trade);
@@ -37,5 +38,4 @@ public class Essentials {
         }
         return true;
     }
-
 }
