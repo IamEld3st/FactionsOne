@@ -61,7 +61,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>18w03b-R0.1-SNAPSHOT<!-->1.12.2<--></version>
+            <version>18w11a-R0.1-SNAPSHOT<!-->1.12.2<--></version>
         </dependency>
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
